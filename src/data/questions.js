@@ -1,143 +1,138 @@
-// 100 Simple, Clear, Funny Questions with Easy Choices
+// 100 Personal Habits & Lifestyle Relationship Questions ("How well do you know me?")
 
 export const ALL_QUESTIONS = [
-  // 1-10
+  // 1-10: Personal Food & Cravings
   {
     id: 1,
-    category: 'Late Night 🌙',
-    title: 'What do you do at 3:00 AM on a weekday?',
+    category: 'Food Craving 🍔',
+    title: 'What is my ultimate favorite food craving when hungry?',
     options: [
-      { label: 'Deep in Sleep', desc: 'Sleeping peacefully in bed 💤', bgColor: 'bg-indigo-100', icon: '😴' },
-      { label: 'Doomscrolling Phone', desc: 'Watching viral videos on TikTok 📱', bgColor: 'bg-pink-100', icon: '📱' },
-      { label: 'Eating Midnight Snacks', desc: 'Snacking cold food from fridge 🧀', bgColor: 'bg-amber-100', icon: '🍕' },
-      { label: 'Playing Video Games', desc: 'Playing games with headphones on 🎮', bgColor: 'bg-purple-100', icon: '🎮' }
+      { label: 'Hot Biryani / Porotta', desc: 'Delicious savory meal 🍛', bgColor: 'bg-amber-100', icon: '🍛' },
+      { label: 'Crispy Dosa & Filter Coffee', desc: 'Classic south comfort food ☕', bgColor: 'bg-yellow-100', icon: '☕' },
+      { label: 'Cheesy Pizza & Burger', desc: 'Loaded fast food treat 🍕', bgColor: 'bg-orange-100', icon: '🍕' },
+      { label: 'Spicy Noodles / Momos', desc: 'Late-night street food 🍜', bgColor: 'bg-rose-100', icon: '🍜' }
     ]
   },
   {
     id: 2,
-    category: 'Apocalypse 🧟',
-    title: 'Zombie Apocalypse starts today! What is your plan?',
+    category: 'Texting Habit 💬',
+    title: 'What is my actual texting style when chatting with you?',
     options: [
-      { label: 'Hide at Home', desc: 'Lock all doors and hide under bed 🏠', bgColor: 'bg-emerald-100', icon: '🏠' },
-      { label: 'Grab All Food', desc: 'Run to supermarket & take snacks 🍫', bgColor: 'bg-amber-100', icon: '🛒' },
-      { label: 'Be the Leader', desc: 'Gather crew and fight zombies ⚔️', bgColor: 'bg-rose-100', icon: '👑' },
-      { label: 'Become Zombie First', desc: 'Get bitten immediately by mistake 🧟', bgColor: 'bg-purple-100', icon: '💀' }
+      { label: 'Instant Fast Replies', desc: 'Replies in 2 seconds flat ⚡', bgColor: 'bg-emerald-100', icon: '⚡' },
+      { label: 'Sends 10 Voice Memos', desc: 'Loves talking over audio 🎙️', bgColor: 'bg-purple-100', icon: '🎙️' },
+      { label: 'Leaves On Read', desc: 'Forgets to reply for 5 hours 💀', bgColor: 'bg-rose-100', icon: '💀' },
+      { label: 'Uses Memes & Stickers', desc: 'Communicates only in funny memes 📲', bgColor: 'bg-yellow-100', icon: '📲' }
     ]
   },
   {
     id: 3,
-    category: 'Texting 💬',
-    title: 'How fast do you reply to messages?',
+    category: 'Late Night 🌙',
+    title: 'What am I usually doing at 2:00 AM on a weekend?',
     options: [
-      { label: 'In 2 Seconds', desc: 'Replying instantly like a robot ⚡', bgColor: 'bg-emerald-100', icon: '⚡' },
-      { label: 'In 10 Minutes', desc: 'Normal speed when free ⏱️', bgColor: 'bg-blue-100', icon: '⏱️' },
-      { label: 'Next Morning', desc: '"Sorry just saw this now!" 😴', bgColor: 'bg-amber-100', icon: '🌙' },
-      { label: '3 Days Later', desc: 'Leaves on read & forgets completely 💀', bgColor: 'bg-rose-100', icon: '👻' }
+      { label: 'Sleeping Deeply', desc: 'Out cold in bed snoring 💤', bgColor: 'bg-indigo-100', icon: '😴' },
+      { label: 'Scrolling Instagram/TikTok', desc: 'Doomscrolling short videos 📱', bgColor: 'bg-pink-100', icon: '📱' },
+      { label: 'Midnight Kitchen Snack', desc: 'Searching fridge for cold food 🧀', bgColor: 'bg-amber-100', icon: '🧀' },
+      { label: 'Binge Watching Shows', desc: 'Watching movies till sunrise 🍿', bgColor: 'bg-purple-100', icon: '🍿' }
     ]
   },
   {
     id: 4,
-    category: 'Food 🍕',
-    title: 'How do you eat pizza crust?',
+    category: 'Money Mood 💸',
+    title: 'How do I handle money when we go shopping?',
     options: [
-      { label: 'Eat It All', desc: 'Eats pizza and crust completely 🍕', bgColor: 'bg-orange-100', icon: '😋' },
-      { label: 'Dip In Sauce', desc: 'Dips crust in garlic butter sauce 🧄', bgColor: 'bg-amber-100', icon: '🧄' },
-      { label: 'Leave It On Plate', desc: 'Throws away crust on plate 🗑️', bgColor: 'bg-red-100', icon: '🗑️' },
-      { label: 'Steal Friend’s Crust', desc: 'Eats all leftover crusts 🐶', bgColor: 'bg-lime-100', icon: '🐶' }
+      { label: 'Bargain Queen/King', desc: 'Asks for discount everywhere 🏷️', bgColor: 'bg-emerald-100', icon: '🏷️' },
+      { label: 'Impulse Shopping Spree', desc: 'Buys everything on sight 🛍️', bgColor: 'bg-pink-100', icon: '🛍️' },
+      { label: 'Treats Everyone Food', desc: 'Pays bill for the whole group 🥂', bgColor: 'bg-amber-100', icon: '🥂' },
+      { label: 'Super Saver', desc: 'Strictly saves money in bank 📈', bgColor: 'bg-blue-100', icon: '📈' }
     ]
   },
   {
     id: 5,
-    category: 'Party 🥳',
-    title: 'At a party with strangers, where are you?',
+    category: 'Dream Travel 🌴',
+    title: 'What is my dream getaway vacation spot?',
     options: [
-      { label: 'Playing With Dog', desc: 'Petting the owner’s pet dog 🐕', bgColor: 'bg-amber-100', icon: '🐕' },
-      { label: 'Dancing Near DJ', desc: 'Dancing in middle of room 🕺', bgColor: 'bg-pink-100', icon: '🎧' },
-      { label: 'Eating All Snacks', desc: 'Standing at food table eating 🍿', bgColor: 'bg-emerald-100', icon: '🥑' },
-      { label: 'Going Home Early', desc: 'Leaving secretly after 15 mins 👻', bgColor: 'bg-purple-100', icon: '🏃' }
+      { label: 'Kerala Backwaters & Beach', desc: 'Relaxing houseboats & sea breeze 🌊', bgColor: 'bg-cyan-100', icon: '🌊' },
+      { label: 'Mysore Royal Palace & Hills', desc: 'Heritage city & Coorg coffee hills 🏰', bgColor: 'bg-amber-100', icon: '🏰' },
+      { label: 'Snow Mountains Trekking', desc: 'Cold mountain adventures 🏔️', bgColor: 'bg-blue-100', icon: '🏔️' },
+      { label: 'Shopping City Vacation', desc: 'Big city lights & night markets 🌃', bgColor: 'bg-purple-100', icon: '🌃' }
     ]
   },
   {
     id: 6,
-    category: 'Superpower ⚡',
-    title: 'Pick one fun power for daily life:',
+    category: 'Angry Reaction 😠',
+    title: 'How do I react when I get annoyed or angry at something?',
     options: [
-      { label: 'Instant Fast Travel', desc: 'Teleport anywhere instantly ✈️', bgColor: 'bg-cyan-100', icon: '⚡' },
-      { label: 'Never Feel Tired', desc: 'Zero sleep needed ever ⚡', bgColor: 'bg-yellow-100', icon: '🔋' },
-      { label: 'Talk To Animals', desc: 'Chat with cats and dogs 🐱', bgColor: 'bg-emerald-100', icon: '🐶' },
-      { label: 'Unlimited Money', desc: 'Free money on demand 💰', bgColor: 'bg-amber-100', icon: '💰' }
+      { label: 'Silent Cold Treatment', desc: 'Stops talking & ignores quietly 🤫', bgColor: 'bg-slate-100', icon: '🤫' },
+      { label: 'Vents Loudly To Bestie', desc: 'Explodes & talks for 30 mins 🗣️', bgColor: 'bg-rose-100', icon: '🗣️' },
+      { label: 'Eats Comfort Food', desc: 'Cures bad mood with ice cream/biryani 🍨', bgColor: 'bg-yellow-100', icon: '🍨' },
+      { label: 'Listens To Sad Music', desc: 'Puts headphones on full volume 🎧', bgColor: 'bg-indigo-100', icon: '🎧' }
     ]
   },
   {
     id: 7,
-    category: 'Shopping 🛍️',
-    title: 'You go to store for 1 item. You leave with:',
+    category: 'Home Mood 🏠',
+    title: 'What is my favorite lazy day outfit at home?',
     options: [
-      { label: 'Just That 1 Item', desc: 'Bought exactly what was needed 🤖', bgColor: 'bg-cyan-100', icon: '🛍️' },
-      { label: '10 Random Things', desc: 'Bought clothes, snacks & lights 🛒', bgColor: 'bg-pink-100', icon: '🛒' },
-      { label: 'Forgot Original Item', desc: 'Bought everything except that 1 item 🤦', bgColor: 'bg-rose-100', icon: '🤦' },
-      { label: 'Broke My Bank', desc: 'Spent entire monthly budget 💸', bgColor: 'bg-purple-100', icon: '💸' }
+      { label: 'Oversized Hoodie & Sweats', desc: 'Cozy blanket aesthetic 🧥', bgColor: 'bg-amber-100', icon: '🧥' },
+      { label: 'Comfy Lungi / Pajamas', desc: 'Traditional super comfy fit 🌴', bgColor: 'bg-emerald-100', icon: '🌴' },
+      { label: 'Gym Clothes (Didn’t Gym)', desc: 'Sporty activewear fit 👟', bgColor: 'bg-blue-100', icon: '👟' },
+      { label: 'Fancy Stylish Fit', desc: 'Looking dressy even indoors ✨', bgColor: 'bg-pink-100', icon: '✨' }
     ]
   },
   {
     id: 8,
-    category: 'React 🤣',
-    title: 'Your friend drops their food on floor. You:',
+    category: 'Secret Fear 😱',
+    title: 'What is my secret biggest pet peeve or fear?',
     options: [
-      { label: 'Laugh Out Loud', desc: 'Laughing hard before helping 🤣', bgColor: 'bg-yellow-100', icon: '🤣' },
-      { label: 'Apply 5-Second Rule', desc: 'Pick it up and eat it fast ⏱️', bgColor: 'bg-orange-100', icon: '⏱️' },
-      { label: 'Buy Them New Food', desc: 'Generously buy them another food 🍔', bgColor: 'bg-emerald-100', icon: '🍔' },
-      { label: 'Take A Video', desc: 'Record a video for group chat 📹', bgColor: 'bg-purple-100', icon: '📹' }
+      { label: 'People Slow Replying', desc: 'Hates being left on read 📱', bgColor: 'bg-rose-100', icon: '📱' },
+      { label: 'Loud Chewing Sounds', desc: 'Can’t stand noisy food eating 🤫', bgColor: 'bg-amber-100', icon: '🤫' },
+      { label: 'Bugs Flying Near Me', desc: 'Panics when a moth flies past 🦋', bgColor: 'bg-purple-100', icon: '🦋' },
+      { label: 'Running Out Of Phone Battery', desc: 'Fears 1% low battery level 🔋', bgColor: 'bg-yellow-100', icon: '⚡' }
     ]
   },
   {
     id: 9,
-    category: 'Alone Time 🤫',
-    title: 'What is your favorite lazy weekend habit?',
+    category: 'Guilty Pleasure 🤫',
+    title: 'What is my secret guilty pleasure when I’m alone?',
     options: [
-      { label: 'Shower Concert', desc: 'Singing songs loudly in shower 🎤', bgColor: 'bg-pink-100', icon: '🎤' },
-      { label: 'Binge Movies', desc: 'Watching movies all day long 🍿', bgColor: 'bg-indigo-100', icon: '🍿' },
-      { label: 'Sleep 12 Hours', desc: 'Sleeping until afternoon 😴', bgColor: 'bg-purple-100', icon: '💤' },
-      { label: 'Order Fast Food', desc: 'Ordering takeout pizza & burgers 🍕', bgColor: 'bg-amber-100', icon: '🛵' }
+      { label: 'Singing In The Bathroom', desc: 'Full concert vocals in shower 🎤', bgColor: 'bg-pink-100', icon: '🎤' },
+      { label: 'Celebrity Gossip Threads', desc: 'Reading influencer drama 🍿', bgColor: 'bg-yellow-100', icon: '🍿' },
+      { label: 'Eating Frosting With Spoon', desc: 'Sweet tooth tub dessert 🧁', bgColor: 'bg-rose-100', icon: '🧁' },
+      { label: 'Talking To Pets', desc: 'Having full conversations with cats/dogs 🐱', bgColor: 'bg-emerald-100', icon: '🐱' }
     ]
   },
   {
     id: 10,
-    category: 'Vacation 🏖️',
-    title: 'On a trip with friends, you are the one who:',
+    category: 'Friendship Rule 🤝',
+    title: 'Why should you NEVER block me on social media?',
     options: [
-      { label: 'Makes All Plans', desc: 'Organizes time & places 📋', bgColor: 'bg-blue-100', icon: '📋' },
-      { label: 'Takes All Photos', desc: 'Captures 1,000 photos of everyone 📸', bgColor: 'bg-pink-100', icon: '📸' },
-      { label: 'Gets Lost Constantly', desc: 'Separated from group in 2 mins 🗺️', bgColor: 'bg-amber-100', icon: '🗺️' },
-      { label: 'Stays In Hotel Bed', desc: 'Reluctant to leave aircon room 🛌', bgColor: 'bg-indigo-100', icon: '🛌' }
+      { label: 'I Send Top Tier Memes', desc: 'Daily funny viral comedy posts 📲', bgColor: 'bg-amber-100', icon: '📲' },
+      { label: 'I Pay For Your Treats', desc: 'Always buys food & shares chai ☕', bgColor: 'bg-emerald-100', icon: '☕' },
+      { label: 'I Know All Your Secrets', desc: 'Mutual assured friendship pact 🤫', bgColor: 'bg-rose-100', icon: '🤫' },
+      { label: '100% Unmatched Loyalty', desc: 'Rides or dies 24/7 no matter what 💖', bgColor: 'bg-pink-100', icon: '💖' }
     ]
   },
 
-  // 11-100 Additional Simple Unique Questions
+  // 11-100 Additional Personal Friendship Habits
   ...Array.from({ length: 90 }, (_, i) => {
     const num = 11 + i;
-    const SimpleTopics = [
-      { t: 'Driving 🚗', q: 'When driving or riding in a car, you:', a1: 'Sing Loudly 🎶', a2: 'Control The Aux 🎧', a3: 'Sleep Whole Ride 😴', a4: 'Stare Out Window 🌧️' },
-      { t: 'Hangout 🍻', q: 'Friend asks: "Wanna hang out right now?" You say:', a1: 'YES, OMW! 👟', a2: 'Who is coming? 🔍', a3: 'Too tired today 🛌', a4: 'Ignores Message 💤' },
-      { t: 'Magic Button 🔴', q: 'If you could press 1 magic button, what does it give?', a1: 'Free Iced Coffee ☕', a2: 'Skip Awkward Talk ⚡', a3: 'Daily $500 Cash 💵', a4: 'Perfect Hair Always 💇' },
-      { t: 'Cooking 🍳', q: 'What happens when you try to cook food?', a1: 'Master Chef Dish 👨‍🍳', a2: 'Sets Off Smoke Alarm 🔥', a3: 'Order Delivery Instead 🛵', a4: 'Simple Cereal 🥣' },
-      { t: 'Ghost Haunt 👻', q: 'If you became a ghost, how would you prank people?', a1: 'Untie Shoelaces 👟', a2: 'Play Loud Music 🔊', a3: 'Hide One Sock 🧦', a4: 'Turn Off Lights 💡' },
-      { t: 'Morning ⏰', q: 'Your morning alarm rings! What do you do first?', a1: 'Snooze 5 Times ⏰', a2: 'Get Up Instantly ⚡', a3: 'Check Social Media 📱', a4: 'Throw Phone 💥' },
-      { t: 'Cinema 🍿', q: 'At the movie theater, your popcorn is:', a1: 'Finished in Trailers 🍿', a2: 'Mixed With Candy 🍬', a3: 'Extra Extra Butter 🧈', a4: 'Shared With Friend 🤝' },
-      { t: 'Group Work 📝', q: 'In school or work group projects, you:', a1: 'Do All The Work 💻', a2: 'Do The Presentation 🎤', a3: 'Bring The Snacks 🍩', a4: 'Disappear Completely 💨' },
-      { t: 'Stray Cat 🐱', q: 'You see a cute stray cat on street. You:', a1: 'Psst-Psst For 10 Mins 🐈', a2: 'Take It Home 🏠', a3: 'Take Cute Photos 📸', a4: 'Walk Away Quietly 🚶' },
-      { t: 'Fear 😱', q: 'What is your biggest silly fear?', a1: 'Dropping Phone In Water 🚽', a2: 'Accidental Live Video 📱', a3: 'Bugs Flying In Room 🦋', a4: 'Dark Basement Stairs 🏃' }
+    const PersonalTopics = [
+      { t: 'Morning Coffee ☕', q: 'How do I take my morning drink?', a1: 'Strong Hot Filter Coffee ☕', a2: 'Sweet Masala Chai 🫖', a3: 'Iced Coffee With Cream 🧋', a4: 'Plain Cold Water 💧' },
+      { t: 'Party Vibe 🥳', q: 'What do I do at a big social party?', a1: 'Pet The Owner’s Dog 🐕', a2: 'Dance Near The DJ 🕺', a3: 'Eat All The Snacks 🍿', a4: 'Go Home Early Secretly 🏃' },
+      { t: 'Movie Choice 🎬', q: 'What movie genre is my absolute favorite?', a1: 'Mass Action Thriller 💥', a2: 'Romantic Comedy 💕', a3: 'Horror Thriller 👻', a4: 'Funny Comedy Bop 🤣' },
+      { t: 'Weekend Nap 😴', q: 'How long do I sleep on a lazy Sunday?', a1: '10+ Hours Sleep 🛌', a2: 'Up At 6 AM Energetic 🏃', a3: '3 Hour Afternoon Nap 💤', a4: 'No Sleep All Gaming 🎮' },
+      { t: 'Road Trip 🚗', q: 'What is my role on a road trip with friends?', a1: 'DJ Aux Playlist Controller 🎧', a2: 'Snack Manager & Feeder 🍟', a3: 'Driver At 100 mph 🏎️', a4: 'Asleep In Backseat 😴' }
     ];
-    const item = SimpleTopics[i % SimpleTopics.length];
+    const item = PersonalTopics[i % PersonalTopics.length];
     return {
       id: num,
       category: `${item.t}`,
       title: `${item.q}`,
       options: [
-        { label: item.a1, desc: 'Option A choice', bgColor: 'bg-amber-100', icon: '⭐' },
-        { label: item.a2, desc: 'Option B choice', bgColor: 'bg-emerald-100', icon: '💖' },
-        { label: item.a3, desc: 'Option C choice', bgColor: 'bg-cyan-100', icon: '⚡' },
-        { label: item.a4, desc: 'Option D choice', bgColor: 'bg-purple-100', icon: '🎉' }
+        { label: item.a1, desc: 'Personal habit choice', bgColor: 'bg-amber-100', icon: '⭐' },
+        { label: item.a2, desc: 'Personal habit choice', bgColor: 'bg-emerald-100', icon: '💖' },
+        { label: item.a3, desc: 'Personal habit choice', bgColor: 'bg-cyan-100', icon: '⚡' },
+        { label: item.a4, desc: 'Personal habit choice', bgColor: 'bg-purple-100', icon: '🎉' }
       ]
     };
   })

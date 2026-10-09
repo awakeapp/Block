@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import QuestionCard from './QuestionCard';
-import { getRandom10Questions } from '../data/questions';
+import { ALL_QUESTIONS, getRandom10Questions } from '../data/questions';
 import { encodeQuizData } from '../utils/quizEncoder';
 import { soundFx } from '../utils/audio';
-import { Dices, ArrowRight, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Dices, ArrowRight, ArrowLeft, CheckCircle, SkipForward } from 'lucide-react';
 
 export default function CreatorFlow({ onQuizCreated }) {
   const [step, setStep] = useState(1); // 1: Profile setup, 2: Answering 10 Questions
@@ -20,6 +20,22 @@ export default function CreatorFlow({ onQuizCreated }) {
     setQuestions(getRandom10Questions());
     setAnswers({});
     setCurrentQIndex(0);
+  };
+
+  const handleSkipQuestion = () => {
+    soundFx.playPop();
+    const currentIds = questions.map(q => q.id);
+    const available = ALL_QUESTIONS.filter(q => !currentIds.includes(q.id));
+    if (available.length === 0) return;
+
+    const randomNewQ = available[Math.floor(Math.random() * available.length)];
+    const newQuestions = [...questions];
+    newQuestions[currentQIndex] = randomNewQ;
+    setQuestions(newQuestions);
+
+    const newAnswers = { ...answers };
+    delete newAnswers[currentQIndex];
+    setAnswers(newAnswers);
   };
 
   const handleSelectOption = (optionIdx) => {
@@ -145,25 +161,36 @@ export default function CreatorFlow({ onQuizCreated }) {
       ) : (
         /* STEP 2: Answering 10 Questions */
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2">
             <button
               onClick={() => {
                 soundFx.playPop();
                 setStep(1);
               }}
-              className="px-3.5 py-1.5 glossy-wood-pill text-xs font-black flex items-center gap-1"
+              className="px-3 py-1.5 glossy-wood-pill text-xs font-black flex items-center gap-1"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back</span>
             </button>
 
-            <button
-              onClick={handleShuffleQuestions}
-              className="px-3.5 py-1.5 glossy-gold-pill text-xs font-black flex items-center gap-1.5"
-            >
-              <Dices className="w-4 h-4" />
-              <span>Shuffle 10 Questions 🎲</span>
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleSkipQuestion}
+                className="px-3 py-1.5 glossy-wood-pill text-xs font-black flex items-center gap-1 hover:scale-105 active:scale-95 transition-all text-amber-200"
+                title="Swap this question with another random habit question"
+              >
+                <SkipForward className="w-3.5 h-3.5 text-yellow-400" />
+                <span>Skip ⏭️</span>
+              </button>
+
+              <button
+                onClick={handleShuffleQuestions}
+                className="px-3 py-1.5 glossy-gold-pill text-xs font-black flex items-center gap-1 hover:scale-105 active:scale-95 transition-all"
+              >
+                <Dices className="w-3.5 h-3.5" />
+                <span>Shuffle All 🎲</span>
+              </button>
+            </div>
           </div>
 
           {/* Question Card View with Companion Host */}
