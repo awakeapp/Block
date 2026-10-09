@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti';
 import { soundFx } from '../utils/audio';
 import { 
   Sparkles, Download, CheckCircle2, XCircle, 
-  HeartHandshake, ShieldAlert, Ban, ShieldCheck, Frown
+  ShieldCheck, ShieldAlert, Ban, Frown
 } from 'lucide-react';
 
 export default function ResultsScreen({ resultData, onCreateOwnQuiz }) {
@@ -77,7 +77,7 @@ export default function ResultsScreen({ resultData, onCreateOwnQuiz }) {
     };
   }
 
-  // Generate Jungle Story Card Image
+  // Generate Story Thumbnail Card with BOTH Boy & Girl Characters
   const handleDownloadStoryCard = () => {
     soundFx.playPop();
     setDownloading(true);
@@ -100,24 +100,29 @@ export default function ResultsScreen({ resultData, onCreateOwnQuiz }) {
     ctx.strokeStyle = '#28160c';
     ctx.lineWidth = 16;
     ctx.beginPath();
-    ctx.roundRect(80, 180, 920, 1560, 40);
+    ctx.roundRect(80, 140, 920, 1640, 40);
     ctx.fill();
     ctx.stroke();
 
-    // Card Header
+    // Big Fancy Title
     ctx.fillStyle = '#fef08a';
-    ctx.font = '900 64px sans-serif';
+    ctx.font = '900 76px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText("DON'T BLOCK ME! 🌴", 540, 280);
+    ctx.fillText("DON'T BLOCK ME! 🌴", 540, 240);
 
+    // Creator Asking Title
     ctx.fillStyle = '#f59e0b';
-    ctx.font = '700 38px sans-serif';
-    ctx.fillText("FRIENDSHIP QUIZ RESULT", 540, 340);
+    ctx.font = '800 48px sans-serif';
+    ctx.fillText(`${creatorName} asks:`, 540, 310);
+
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '800 38px sans-serif';
+    ctx.fillText('"Will you pass my 10 questions or get BLOCKED?" 🚫', 540, 370);
 
     // Player vs Creator title
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '800 52px sans-serif';
-    ctx.fillText(`${playerName}  VS  ${creatorName}`, 540, 480);
+    ctx.fillStyle = '#fde047';
+    ctx.font = '900 52px sans-serif';
+    ctx.fillText(`${playerName}  VS  ${creatorName}`, 540, 460);
 
     // Score Circle Background
     ctx.beginPath();
@@ -142,32 +147,53 @@ export default function ResultsScreen({ resultData, onCreateOwnQuiz }) {
     ctx.font = '600 34px sans-serif';
     ctx.fillText(rankBadge.subtitle, 540, 1070);
 
-    // Score summary box
-    ctx.fillStyle = '#3d2314';
-    ctx.beginPath();
-    ctx.roundRect(160, 1150, 760, 360, 30);
-    ctx.fill();
-    ctx.stroke();
+    // Load Boy and Girl Images for canvas
+    const boyImg = new Image();
+    const girlImg = new Image();
 
-    ctx.fillStyle = '#fef08a';
-    ctx.font = '700 42px sans-serif';
-    ctx.fillText(`Points: ${finalPoints} pts (${correctCount} Correct, ${wrongCount} Wrong)`, 540, 1260);
+    let loadedCount = 0;
+    const checkDraw = () => {
+      loadedCount++;
+      if (loadedCount === 2) {
+        // Draw Boy Character on Left side
+        ctx.drawImage(boyImg, 120, 1140, 260, 300);
+        // Draw Girl Character on Right side
+        ctx.drawImage(girlImg, 700, 1140, 260, 300);
 
-    ctx.fillStyle = correctCount <= 3 ? '#f43f5e' : '#10b981';
-    ctx.font = '800 46px sans-serif';
-    ctx.fillText(correctCount <= 3 ? "SERIOUSLY BLOCKED! 🚫💀" : correctCount === 10 ? "GOT A LOLLIPOP REWARD! 🍭" : "SAFE FROM BLOCK! 🎉", 540, 1370);
+        // Score summary box
+        ctx.fillStyle = '#3d2314';
+        ctx.beginPath();
+        ctx.roundRect(140, 1460, 800, 220, 30);
+        ctx.fill();
+        ctx.stroke();
 
-    // Footer Watermark
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '800 36px sans-serif';
-    ctx.fillText("Create your own quiz at Don't Block Me! ✨", 540, 1820);
+        ctx.fillStyle = '#fef08a';
+        ctx.font = '700 42px sans-serif';
+        ctx.fillText(`Points: ${finalPoints} pts (${correctCount} Correct, ${wrongCount} Wrong)`, 540, 1530);
 
-    const link = document.createElement('a');
-    link.download = `DontBlockMe_${playerName}_${correctCount}of10.png`;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+        ctx.fillStyle = correctCount <= 3 ? '#f43f5e' : '#10b981';
+        ctx.font = '800 46px sans-serif';
+        ctx.fillText(correctCount <= 3 ? "SERIOUSLY BLOCKED! 🚫💀" : correctCount === 10 ? "GOT A LOLLIPOP REWARD! 🍭" : "SAFE FROM BLOCK! 🎉", 540, 1620);
 
-    setDownloading(false);
+        // Footer Watermark
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 36px sans-serif';
+        ctx.fillText("Create your own quiz at Don't Block Me! ✨", 540, 1840);
+
+        const link = document.createElement('a');
+        link.download = `DontBlockMe_Story_${playerName}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        setDownloading(false);
+      }
+    };
+
+    boyImg.onload = checkDraw;
+    girlImg.onload = checkDraw;
+
+    boyImg.src = '/123/BOY/Happy.png';
+    girlImg.src = '/123/Girl/happy.png';
   };
 
   return (
@@ -178,26 +204,29 @@ export default function ResultsScreen({ resultData, onCreateOwnQuiz }) {
           Quiz Results 🌴
         </span>
 
-        {/* Player vs Creator */}
-        <div className="flex items-center justify-center gap-6 sm:gap-10 pt-2">
-          {/* Player */}
+        {/* Both Characters Facing Each Other */}
+        <div className="flex items-center justify-between gap-2 pt-2 px-2">
+          {/* Boy Character */}
           <div className="flex flex-col items-center">
-            <div className="w-16 h-16 rounded-2xl bg-amber-500 border-2 border-[#231208] flex items-center justify-center text-3xl shadow-lg">
-              {playerGender === 'female' ? '👧' : '👦'}
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-b from-indigo-500 to-cyan-700 p-1 border-2 border-amber-950 shadow-lg">
+              <img src="/123/BOY/Happy.png" alt="Boy Character" className="w-full h-full object-contain filter drop-shadow" />
             </div>
-            <span className="font-black text-base text-yellow-300 mt-2">{playerName}</span>
-            <span className="text-[11px] font-bold text-amber-200/60">Player</span>
+            <span className="font-black text-sm text-yellow-300 mt-2">Boy</span>
           </div>
 
-          <div className="text-2xl font-black text-amber-400 animate-pulse">VS</div>
+          <div className="text-center space-y-0.5">
+            <div className="text-xl font-black text-amber-400">VS</div>
+            <span className="text-[11px] font-black text-amber-200 block uppercase">
+              {creatorName} asks:
+            </span>
+          </div>
 
-          {/* Creator */}
+          {/* Girl Character */}
           <div className="flex flex-col items-center">
-            <div className="w-16 h-16 rounded-2xl bg-amber-500 border-2 border-[#231208] flex items-center justify-center text-3xl shadow-lg">
-              👦
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-b from-pink-500 to-rose-700 p-1 border-2 border-amber-950 shadow-lg">
+              <img src="/123/Girl/happy.png" alt="Girl Character" className="w-full h-full object-contain filter drop-shadow" />
             </div>
-            <span className="font-black text-base text-yellow-300 mt-2">{creatorName}</span>
-            <span className="text-[11px] font-bold text-amber-200/60">Creator</span>
+            <span className="font-black text-sm text-yellow-300 mt-2">Girl</span>
           </div>
         </div>
 
@@ -262,12 +291,12 @@ export default function ResultsScreen({ resultData, onCreateOwnQuiz }) {
             className="py-3.5 px-4 glossy-gold-pill font-black text-sm flex items-center justify-center gap-2 shadow-lg"
           >
             <Download className="w-5 h-5 text-amber-950" />
-            <span>{downloading ? 'Generating...' : 'Download Story Card 📸'}</span>
+            <span>{downloading ? 'Generating...' : 'Save Thumbnail 📸'}</span>
           </button>
         </div>
       </div>
 
-      {/* Answer Breakdown with Minus Point Badges */}
+      {/* Answer Breakdown */}
       <div className="mockup-main-board p-5 space-y-4 shadow-xl">
         <h3 className="font-black text-lg text-yellow-300 flex items-center gap-2">
           <span>Question Answer Breakdown</span>
