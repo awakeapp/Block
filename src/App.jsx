@@ -127,12 +127,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans pb-12 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col font-sans pb-6 relative overflow-x-hidden">
       {/* Top Navigation Header matching Mockup */}
       <Navbar onReset={handleReset} />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-2xl w-full mx-auto px-4 py-4 relative z-20">
+      <main className="flex-1 max-w-xl w-full mx-auto px-2.5 sm:px-4 py-2 sm:py-3 relative z-20 flex flex-col justify-center">
         {showLeaderboard ? (
           <Leaderboard
             leaderboardEntries={leaderboard}
@@ -140,30 +140,16 @@ export default function App() {
             onClose={() => setShowLeaderboard(false)}
           />
         ) : mode === 'CREATOR' ? (
-          <div className="space-y-5">
-            {/* Main Title Banner matching Mockup */}
-            <div className="text-center space-y-2 py-1 relative">
-              <h1 className="text-3xl sm:text-5xl font-black text-yellow-300 drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)] tracking-tight leading-none flex items-center justify-center gap-1">
+          <div className="space-y-3 sm:space-y-5">
+            {/* Compact Banner for Mobile */}
+            <div className="text-center space-y-1 py-0.5 relative">
+              <h1 className="text-2xl sm:text-4xl font-black text-yellow-300 drop-shadow-[0_3px_5px_rgba(0,0,0,0.9)] tracking-tight leading-none flex items-center justify-center gap-1">
                 <span>DON'T BLOCK ME</span>
-                <span className="text-2xl sm:text-4xl">🌴</span>
+                <span className="text-xl sm:text-3xl">🌴</span>
               </h1>
-              <p className="text-xs sm:text-sm font-black text-amber-100 drop-shadow max-w-md mx-auto leading-snug">
-                Create your 10-question friendship quiz with animated live reactions & see what person or girls <span className="text-rose-400 underline decoration-wavy">BLOCKS YOU!</span>
+              <p className="text-[11px] sm:text-xs font-extrabold text-amber-100 drop-shadow max-w-xs sm:max-w-md mx-auto leading-tight">
+                Create your 10-question friendship quiz & see who <span className="text-rose-400 underline decoration-wavy">BLOCKS YOU!</span>
               </p>
-
-              {/* Right Side Directional Wooden Signpost matching Mockup (Desktop/Tablet view) */}
-              <div className="hidden lg:flex flex-col items-end gap-1.5 absolute -right-36 top-0 z-10 pointer-events-none">
-                <div className="w-2.5 h-36 bg-[#231208] border-x border-[#140a04] absolute right-8 top-0 -z-10" />
-                <div className="px-4 py-1.5 glossy-wood-pill text-xs font-black text-amber-950 uppercase tracking-widest shadow-lg rotate-2">
-                  FRIENDS 🪵
-                </div>
-                <div className="px-4 py-1.5 glossy-wood-pill text-xs font-black text-amber-950 uppercase tracking-widest shadow-lg -rotate-3">
-                  QUIZ 🌴
-                </div>
-                <div className="px-4 py-1.5 glossy-wood-pill text-xs font-black text-amber-950 uppercase tracking-widest shadow-lg rotate-1">
-                  ADVENTURE 🗺️
-                </div>
-              </div>
             </div>
 
             {/* Creator Workflow */}

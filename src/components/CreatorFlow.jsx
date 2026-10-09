@@ -68,23 +68,23 @@ export default function CreatorFlow({ onQuizCreated }) {
   const answeredCount = Object.keys(answers).length;
 
   return (
-    <div className="max-w-xl mx-auto space-y-5">
+    <div className="max-w-xl mx-auto space-y-3 sm:space-y-5">
       {step === 1 ? (
-        /* STEP 1: Name & Gender Setup (Clean & Fast, Avatar Section Removed) */
-        <div className="mockup-main-board p-6 sm:p-8 space-y-6 shadow-2xl">
+        /* STEP 1: Name & Gender Setup */
+        <div className="mockup-main-board p-4 sm:p-7 space-y-4 shadow-2xl">
           {/* Step Badge */}
           <div className="text-center">
-            <span className="px-4 py-1 bg-[#231208] border-2 border-[#5c341b] text-yellow-300 font-extrabold text-xs uppercase tracking-wider rounded-full shadow">
+            <span className="px-3 py-0.5 bg-[#231208] border-2 border-[#5c341b] text-yellow-300 font-extrabold text-[11px] sm:text-xs uppercase tracking-wider rounded-full shadow">
               STEP 1 OF 2
             </span>
           </div>
 
           {/* Title & Subtitle */}
           <div className="text-center space-y-1">
-            <h2 className="text-2xl sm:text-3xl font-black text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+            <h2 className="text-xl sm:text-3xl font-black text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               Create Your Friendship Quiz 🌴
             </h2>
-            <p className="text-xs sm:text-sm font-bold text-amber-200/80 max-w-sm mx-auto">
+            <p className="text-xs font-bold text-amber-200/80 max-w-sm mx-auto">
               Enter your name & select your gender to start your 10-question quiz!
             </p>
           </div>

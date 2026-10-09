@@ -98,10 +98,10 @@ export default function PlayerFlow({ quizPayload, onFinishPlayerQuiz }) {
   const isNameValid = playerName.trim().length >= 2;
 
   return (
-    <div className="max-w-xl mx-auto space-y-6">
+    <div className="max-w-xl mx-auto space-y-3 sm:space-y-6">
       {step === 1 ? (
         /* STEP 1: Friend Name & Gender */
-        <div className="mockup-main-board p-6 sm:p-8 space-y-6 shadow-2xl">
+        <div className="mockup-main-board p-4 sm:p-7 space-y-4 shadow-2xl">
           {/* Creator Greeting Banner */}
           <div className="p-4 bg-amber-950/80 border-2 border-amber-800 rounded-2xl flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-amber-500 border-2 border-amber-950 flex items-center justify-center text-2xl shrink-0">
