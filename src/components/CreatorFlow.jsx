@@ -25,7 +25,19 @@ export default function CreatorFlow({ onQuizCreated }) {
   const handleSkipQuestion = () => {
     soundFx.playPop();
     const currentIds = questions.map(q => q.id);
-    const available = ALL_QUESTIONS.filter(q => !currentIds.includes(q.id));
+    let usedIds = [];
+    try {
+      const stored = localStorage.getItem('dont_block_me_used_q_ids');
+      if (stored) usedIds = JSON.parse(stored);
+    } catch (e) {
+      usedIds = [];
+    }
+
+    const exclude = new Set([...currentIds, ...usedIds]);
+    let available = ALL_QUESTIONS.filter(q => !exclude.has(q.id));
+    if (available.length === 0) {
+      available = ALL_QUESTIONS.filter(q => !currentIds.includes(q.id));
+    }
     if (available.length === 0) return;
 
     const randomNewQ = available[Math.floor(Math.random() * available.length)];
